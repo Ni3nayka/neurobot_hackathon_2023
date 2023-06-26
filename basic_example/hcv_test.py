@@ -11,8 +11,8 @@ if __name__ == '__main__':
 cv2.namedWindow( "result" ) # создаем главное окно
 cv2.namedWindow( "settings" ) # создаем окно настроек
 
-#cap = video.create_capture(0)
-cap = cv2.VideoCapture(1, cv2.CAP_DSHOW)
+cap = video.create_capture(0)
+#cap = cv2.VideoCapture(1, cv2.CAP_DSHOW)
 # создаем 6 бегунков для настройки начального и конечного цвета фильтра
 cv2.createTrackbar('h1', 'settings', 0, 255, nothing)
 cv2.createTrackbar('s1', 'settings', 0, 255, nothing)
@@ -43,7 +43,7 @@ while True:
 
     cv2.imshow('result', thresh) 
  
-    if cv2.waitKey(5) == ord('q'):
+    if cv2.waitKey(5) == 27: # ord('q')
         break
 
 print(h1, s1, v1, h2, s2, v2)
